@@ -9,8 +9,10 @@ document.addEventListener("DOMContentLoaded", function(){
 	body.appendChild(el);
 
 	var jack = document.getElementById('jack');
-
 	var color = 0;
+	var pop = new Audio("pop.mp3");
+	pop.loop = false;
+    pop.autoplay = false;
 
 	//Listening mouse position
 	function mousePosition(e) {
@@ -49,16 +51,20 @@ document.addEventListener("DOMContentLoaded", function(){
 	//Changing color
 	function changeColor(e){
 		switch(color){
-			case 1:
+			case 0:
 				jack.style.background = '#EC185D';
+				color = 1;
+				break;
+			case 1:
+				jack.style.background = '#66d9ef';
 				color = 2;
 				break;
 			case 2:
-				jack.style.background = '#66d9ef';
+				jack.style.background = '#a6e22e';
 				color = 3;
 				break;
 			case 3:
-				jack.style.background = '#a6e22e';
+				jack.style.background = '#FF6633';
 				color = 0;
 				break;
 			default:
@@ -68,13 +74,19 @@ document.addEventListener("DOMContentLoaded", function(){
 		}
 	}
 
+	//Playing sound
+	function sound(){
+		pop.play();
+	}
+
 	//Telling about mouse position, changing jack position
 	body.addEventListener('mousemove', function(e) {
     	console.log(mousePosition(e));
     	moveJack(e);
 	});
 	//Changing colors on click
-	jack.addEventListener('click', function(e){
-		changeColor(e);
+	jack.addEventListener('click', function(){
+		changeColor();
+		sound();
 	});
 });

@@ -3,3 +3,12 @@ body{
 	width: auto;
 	height: 600px;
 }
+#jack{
+	background: #FF6633;
+	left: 0px;
+	top: 0px;
+	position: sticky;
+	transition-property: left, top;
+	transition-duration: 2s;
+	transition-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}

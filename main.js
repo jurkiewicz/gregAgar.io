@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	}
 
 	//Changing color
-	function changeColor(e){
+	function changeColor(){
 		switch(color){
 			case 0:
 				jack.style.background = '#EC185D';

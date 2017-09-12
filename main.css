@@ -2,6 +2,7 @@ body{
 	background: #272822;
 	width: auto;
 	height: 600px;
+	cursor: crosshair;
 }
 #jack{
 	background: #FF6633;
